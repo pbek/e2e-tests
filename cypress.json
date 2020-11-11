@@ -1,0 +1,5 @@
+{
+  "env": {
+    "qownnotes_api_base_url": "https://api.qownnotes.org"
+  }
+}
