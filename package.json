@@ -2,7 +2,7 @@
   "name": "e2e-tests",
   "version": "1.0.0",
   "description": "End2End Tests",
-  "repository": "https://gitlab.tugraz.at/dbp/middleware/e2e-tests/",
+  "repository": "https://github.com/pbek/e2e-tests/",
   "license": "LGPL",
   "dependencies": {},
   "devDependencies": {
@@ -13,5 +13,5 @@
     "cypress:run": "./node_modules/.bin/cypress run",
     "cypress:install": "./node_modules/.bin/cypress install"
   },
-  "author": ""
+  "author": "Patrizio Bekerle"
 }
