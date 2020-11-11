@@ -2,6 +2,10 @@
   "env": {
     "qownnotes_api_base_url": "https://api.qownnotes.org",
     "qownnotes_webpage_base_url": "https://www.qownnotes.org",
-    "cloud_base_url": "https://cloud.bekerle.com"
+    "qownnotes_tuxffamily_download_base_url": "https://download.tuxfamily.org/qownnotes/src",
+    "cloud_base_url": "https://cloud.bekerle.com",
+    "bekerle_base_url": "https://www.bekerle.com",
+    "rawhealth_base_url": "https://www.rawhealthandhappiness.com",
+    "rohundfroh_base_url": "https://www.rohundfroh.eu"
   }
 }
