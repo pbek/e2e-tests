@@ -8,7 +8,6 @@ on:
 
 jobs:
   test:
-
     runs-on: ubuntu-latest
     container: cypress/base
 
@@ -19,10 +18,12 @@ jobs:
         npm install
         npm run cypress:run
     - uses: actions/upload-artifact@v2
+      name: Store videos
       with:
         name: Videos
         path: cypress/videos/
     - uses: actions/upload-artifact@v2
+      name: Store screenshots
       with:
         name: Screenshots
         path: cypress/screenshots/
