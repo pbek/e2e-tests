@@ -22,4 +22,18 @@ describe('API Frontend Tests', () => {
             .get('#operations-LatestRelease-getLatestReleaseItem')
             .contains('https://github.com/pbek/QOwnNotes/releases/download')
     })
+
+    it('Test legacy release api', () => {
+        cy.request('https://www.qownnotes.org/api/v1/last_release/QOwnNotes/windows.json?debug=1')
+        .then((response) => {
+            expect(response.body).to.have.property('should_update', true)
+            expect(response.body).to.have.property('release')
+        })
+
+        cy.request('https://www.qownnotes.org/api/v1/last_release/QOwnNotes/macosx.json?debug=1')
+        .then((response) => {
+            expect(response.body).to.have.property('should_update', true)
+            expect(response.body).to.have.property('release')
+        })
+    })
 })

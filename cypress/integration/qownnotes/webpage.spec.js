@@ -11,4 +11,10 @@ describe('Webpage Tests', () => {
             .get('main h2#features')
             .contains('Features')
     })
+
+    it('Test legacy docs.qownnotes.org redirect', () => {
+        cy
+            .request('https://docs.qownnotes.org/')
+            .location('host').should('eq', 'www.qownnotes.org')
+    })
 })
