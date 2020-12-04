@@ -20,7 +20,7 @@ jobs:
     - name: Run tests
       run: |
         npm install
-        npm run cypress:run --browser "chrome"
+        npm run cypress:run
     - uses: actions/upload-artifact@v2
       if: always()
       name: Store videos
