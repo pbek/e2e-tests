@@ -8,5 +8,9 @@
     "bekerle_base_url": "https://www.bekerle.com",
     "rawhealth_base_url": "https://www.rawhealthandhappiness.com",
     "rohundfroh_base_url": "https://www.rohundfroh.eu"
+  },
+  "retries": {
+    // Configure retry attempts for `cypress run`
+    "runMode": 3
   }
 }
