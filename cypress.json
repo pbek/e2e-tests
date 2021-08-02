@@ -1,5 +1,6 @@
 {
   "env": {
+    "qownnotes_web_app_url": "https://app.qownnotes.org",
     "qownnotes_api_base_url": "https://api.qownnotes.org",
     "qownnotes_webpage_base_url": "https://www.qownnotes.org",
     "qownnotes_tuxffamily_download_base_url": "https://download.tuxfamily.org/qownnotes/src",
