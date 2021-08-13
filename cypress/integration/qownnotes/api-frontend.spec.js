@@ -4,7 +4,7 @@ describe('API Frontend Tests', () => {
 
         // Click on "LatestRelease collection"
         cy
-            .get('#operations-LatestRelease-getLatestReleaseItem > div.opblock-summary.opblock-summary-get > span.opblock-summary-path > a > span')
+            .get('#operations-LatestRelease-getLatestReleaseItem > div.opblock-summary.opblock-summary-get span.opblock-summary-path > a > span')
             .click()
 
         // Click on "Try it out"
