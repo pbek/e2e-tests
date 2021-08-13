@@ -20,7 +20,7 @@ describe('API Frontend Tests', () => {
         // Look for the download link
         cy
             .get('#operations-LatestRelease-getLatestReleaseItem')
-            .contains('https://github.com/pbek/QOwnNotes/releases/download')
+            .contains('https://github.com/pbek/QOwnNotes/releases/download', {timeout: 10000})
     })
 
     it('Test legacy release api', () => {
