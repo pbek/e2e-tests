@@ -4,3 +4,4 @@ cypress/screenshots
 cypress/videos
 .idea
 .vscode
+cypress/fixtures/example.json
