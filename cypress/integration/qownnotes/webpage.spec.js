@@ -3,7 +3,7 @@ describe('Webpage Tests', () => {
         cy
             .visit(Cypress.env('qownnotes_webpage_base_url'))
             .get('header .description')
-            .contains('Free open source plain-text file markdown note taking')
+            .contains('Free open source plain-text file markdown note-taking')
 
             .get('header a.action-button')
             .click()
