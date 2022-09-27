@@ -19,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Install packages
-      run: sudo apt-get install -y swaks
+      run: apt-get install -y swaks
     - name: Run server tests
       run: ./scripts/server-tests.sh
     - name: Run end2end tests
