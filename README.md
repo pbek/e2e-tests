@@ -1,6 +1,6 @@
 # End2End Tests
 
-End2End Tests for all webpages
+End2End Tests for some of my webpages
 
 ## Installation
 
