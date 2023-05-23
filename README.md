@@ -28,3 +28,13 @@ You can create new `*.spec.js` files in sub-folders (project name) of `cypress/i
 ## Hints
 
 In Google Chrome / Chromium you can right click on an element in the dev tools and do a `Copy JS path` (Firefox can't do that).
+
+## NixOS
+
+```bash
+# Open cypress in the Steam Runner
+steam-run npx cypress open
+
+# Or if steam-run is not installed
+NIXPKGS_ALLOW_UNFREE=1 nix-shell -p steam-run --run "steam-run npx cypress open"
+```
