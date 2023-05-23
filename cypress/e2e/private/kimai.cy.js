@@ -9,7 +9,7 @@ describe('Kimai Tests', () => {
                     cy.contains('Kimai')
                 } else if (body.find('div.text-center > h1 > img').length) {
                     cy.log('Kimai 2 found')
-                    cy.invoke('attr', 'alt').should('contain', 'Kimai')
+                    cy.get('div.text-center > h1 > img').invoke('attr', 'alt').should('contain', 'Kimai')
                 }
             })
     })
