@@ -35,5 +35,11 @@ describe('API Frontend Tests', () => {
             expect(response.body).to.have.property('should_update', true)
             expect(response.body).to.have.property('release')
         })
+
+        cy.request('https://www.qownnotes.org/api/v1/last_release/QOwnNotes/linux.json?debug=1')
+        .then((response) => {
+            expect(response.body).to.have.property('should_update', true)
+            expect(response.body).to.have.property('release')
+        })
     })
 })
