@@ -6,8 +6,6 @@ module.exports = defineConfig({
     qownnotes_api_base_url: 'https://api.qownnotes.org',
     qownnotes_webpage_base_url: 'https://www.qownnotes.org',
     qownnotes_mastodon_base_url: 'https://social.qownnotes.org',
-    qownnotes_tuxffamily_download_base_url:
-      'https://download.tuxfamily.org/qownnotes/src',
     cloud_base_url: 'https://cloud.bekerle.com',
     irc_base_url: 'https://irc.bekerle.com',
     bekerle_base_url: 'https://www.bekerle.com',
