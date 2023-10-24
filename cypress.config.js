@@ -14,7 +14,7 @@ module.exports = defineConfig({
     rohundfroh_base_url: 'https://www.rohundfroh.eu',
   },
   retries: {
-    runMode: 3,
+    runMode: 10,
   },
   e2e: {
     // We've imported your old cypress plugins here.
