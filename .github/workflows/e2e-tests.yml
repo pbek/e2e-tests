@@ -43,7 +43,7 @@ jobs:
       run: npm install
     - name: Run end2end tests for ${{ matrix.spec }}
       run: |
-        npm run cypress:run
+        npm run cypress:run -- --spec "cypress/e2e/${{ matrix.spec }}"
         # xvfb-run ./node_modules/.bin/cypress run --browser chrome --headed --spec "cypress/e2e/${{ matrix.spec }}"
     - uses: actions/upload-artifact@v2
       if: always()
