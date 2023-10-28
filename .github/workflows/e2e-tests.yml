@@ -10,23 +10,41 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  server-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install packages for mail server tests
+        run: apt-get install -y swaks
+      - name: Run server tests
+        run: ./scripts/server-tests.sh
+  ui-test:
     runs-on: ubuntu-latest
     # For docker images see:
     # https://github.com/cypress-io/cypress-docker-images/tree/master/browsers#cypressbrowsers
     container: cypress/browsers:node16.16.0-chrome107-ff107
+    strategy:
+      matrix:
+        spec: [
+          'private/bekerle.cy.js',
+          'private/cloud.cy.js',
+          'private/irc.cy.js',
+          'private/kimai.cy.js',
+          'private/rawhealth.cy.js',
+          'qownnotes/api-frontend.cy.js',
+          'qownnotes/mastodon.cy.js',
+          'qownnotes/web-app.cy.js',
+          'qownnotes/webpage.cy.js',
+        ]
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Install packages for mail server tests
-      run: apt-get update && apt-get install -y swaks
-    - name: Run server tests
-      run: ./scripts/server-tests.sh
-    - name: Run end2end tests
+    - uses: actions/checkout@v4
+    - name: Install dependencies
+      run: npm install
+    - name: Run end2end tests for ${{ matrix.spec }}
       run: |
-        npm install
         # npm run cypress:run
-        xvfb-run ./node_modules/.bin/cypress run --browser chrome --headed
+        xvfb-run ./node_modules/.bin/cypress run --browser chrome --headed --spec "${{ matrix.spec }}"
     - uses: actions/upload-artifact@v2
       if: always()
       name: Store videos
