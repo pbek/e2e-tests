@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Install packages for mail server tests
-        run: apt-get install -y swaks
+        run: sudo apt-get install -y swaks
       - name: Run server tests
         run: ./scripts/server-tests.sh
   ui-test:
