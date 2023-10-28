@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     # For docker images see:
     # https://github.com/cypress-io/cypress-docker-images/tree/master/browsers#cypressbrowsers
-    container: cypress/browsers:node12.18.3-chrome87-ff82
+    container: cypress/browsers:node16.16.0-chrome107-ff107
 
     steps:
     - uses: actions/checkout@v2
