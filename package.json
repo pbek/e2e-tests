@@ -5,7 +5,7 @@
   "repository": "https://github.com/pbek/e2e-tests/",
   "license": "LGPL",
   "devDependencies": {
-    "cypress": "^12.8.1"
+    "cypress": "^13.3.3"
   },
   "scripts": {
     "cypress:open": "./node_modules/.bin/cypress open",
