@@ -44,6 +44,8 @@ jobs:
       run: npm install
     - name: Run end2end tests for ${{ matrix.spec }}
       run: |
+        export CYPRESS_defaultCommandTimeout=15000  # 4000 is the default
+        export CYPRESS_VERIFY_TIMEOUT=100000  # 30000 is the default
         # npm run cypress:run -- --spec "cypress/e2e/${{ matrix.spec }}"
         xvfb-run ./node_modules/.bin/cypress run --browser chrome --headed --spec "cypress/e2e/${{ matrix.spec }}"
     - uses: actions/upload-artifact@v2
