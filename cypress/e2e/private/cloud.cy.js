@@ -5,7 +5,7 @@ describe('Cloud Tests', () => {
             .get('footer a.entity-name')
             .contains('Nextcloud Bekerle')
 
-            .get('main .login-box')
+            .get('form.login-form')
             .contains('Log in')
     })
 })
