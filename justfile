@@ -1,12 +1,15 @@
 # Use `just <recipe>` to run a recipe
 # https://just.systems/man/en/
 
-# By default, run the `--choose` command
+# By default, run the `--list` command
 default:
-    @just --choose
+    @just --list
 
-nix-cypress-open:
-    steam-run npx cypress open
+cypress-open:
+    nix-shell -p cypress --run "cypress"
+
+cypress-open-steam:
+    nix-shell -p steam-run --run "steam-run npx cypress open"
 
 # Format all justfiles
 just-format:

@@ -4,6 +4,6 @@
     nativeBuildInputs = with pkgs; [
       just
       nodejs
-      steam-run
+      cypress
     ];
 }
