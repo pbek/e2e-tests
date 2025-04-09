@@ -2,9 +2,9 @@ name: End2End Tests
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
   schedule:
     - cron: "0 * * * *"
   workflow_dispatch:
@@ -26,39 +26,40 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        spec: [
-          'private/bekerle.cy.js',
-          'private/cloud.cy.js',
-          'private/irc.cy.js',
-          'private/kimai.cy.js',
-          'private/rawhealth.cy.js',
-          'qownnotes/api-frontend.cy.js',
-          'qownnotes/mastodon.cy.js',
-          'qownnotes/matomo.cy.js',
-          'qownnotes/web-app.cy.js',
-          'qownnotes/webpage.cy.js',
-        ]
+        spec:
+          [
+            "private/bekerle.cy.js",
+            "private/cloud.cy.js",
+            "private/irc.cy.js",
+            "private/kimai.cy.js",
+            "private/rawhealth.cy.js",
+            "qownnotes/api-frontend.cy.js",
+            "qownnotes/mastodon.cy.js",
+            "qownnotes/matomo.cy.js",
+            "qownnotes/web-app.cy.js",
+            "qownnotes/webpage.cy.js",
+          ]
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Install dependencies
-      run: npm install
-    - name: Run end2end tests for ${{ matrix.spec }}
-      run: |
-        export CYPRESS_defaultCommandTimeout=15000  # 4000 is the default
-        export CYPRESS_VERIFY_TIMEOUT=100000  # 30000 is the default
-        # npm run cypress:run -- --spec "cypress/e2e/${{ matrix.spec }}"
-        xvfb-run ./node_modules/.bin/cypress run --browser chrome --headed --spec "cypress/e2e/${{ matrix.spec }}"
-    - uses: actions/upload-artifact@v4
-      if: always()
-      name: Store videos
-      with:
-        name: Videos
-        path: cypress/videos/
-    - uses: actions/upload-artifact@v4
-      if: always()
-      name: Store screenshots
-      with:
-        name: Screenshots
-        path: cypress/screenshots/
-        if-no-files-found: ignore
+      - uses: actions/checkout@v4
+      - name: Install dependencies
+        run: npm install
+      - name: Run end2end tests for ${{ matrix.spec }}
+        run: |
+          export CYPRESS_defaultCommandTimeout=15000  # 4000 is the default
+          export CYPRESS_VERIFY_TIMEOUT=100000  # 30000 is the default
+          # npm run cypress:run -- --spec "cypress/e2e/${{ matrix.spec }}"
+          xvfb-run ./node_modules/.bin/cypress run --browser chrome --headed --spec "cypress/e2e/${{ matrix.spec }}"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        name: Store videos
+        with:
+          name: Videos
+          path: cypress/videos/
+      - uses: actions/upload-artifact@v4
+        if: always()
+        name: Store screenshots
+        with:
+          name: Screenshots
+          path: cypress/screenshots/
+          if-no-files-found: ignore
