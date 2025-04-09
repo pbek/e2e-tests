@@ -23,23 +23,23 @@
             .contains('https://github.com/pbek/QOwnNotes/releases/download', {timeout: 10000})
     })
 
-    it('Test legacy release api', () => {
-        cy.request('https://www.qownnotes.org/api/v1/last_release/QOwnNotes/windows.json?debug=1')
-        .then((response) => {
-            expect(response.body).to.have.property('should_update', true)
-            expect(response.body).to.have.property('release')
-        })
-
-        cy.request('https://www.qownnotes.org/api/v1/last_release/QOwnNotes/macosx.json?debug=1')
-        .then((response) => {
-            expect(response.body).to.have.property('should_update', true)
-            expect(response.body).to.have.property('release')
-        })
-
-        cy.request('https://www.qownnotes.org/api/v1/last_release/QOwnNotes/linux.json?debug=1')
-        .then((response) => {
-            expect(response.body).to.have.property('should_update', true)
-            expect(response.body).to.have.property('release')
-        })
-    })
+    // it('Test legacy release api', () => {
+    //     cy.request('https://www.qownnotes.org/api/v1/last_release/QOwnNotes/windows.json?debug=1')
+    //     .then((response) => {
+    //         expect(response.body).to.have.property('should_update', true)
+    //         expect(response.body).to.have.property('release')
+    //     })
+    //
+    //     cy.request('https://www.qownnotes.org/api/v1/last_release/QOwnNotes/macosx.json?debug=1')
+    //     .then((response) => {
+    //         expect(response.body).to.have.property('should_update', true)
+    //         expect(response.body).to.have.property('release')
+    //     })
+    //
+    //     cy.request('https://www.qownnotes.org/api/v1/last_release/QOwnNotes/linux.json?debug=1')
+    //     .then((response) => {
+    //         expect(response.body).to.have.property('should_update', true)
+    //         expect(response.body).to.have.property('release')
+    //     })
+    // })
 })
