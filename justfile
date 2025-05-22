@@ -10,10 +10,10 @@ default:
 alias fmt := format
 
 cypress-open:
-    nix-shell -p cypress --run "cypress"
+    cypress
 
 cypress-open-steam:
-    nix-shell -p steam-run --run "steam-run npx cypress open"
+    NIXPKGS_ALLOW_UNFREE=1 nix-shell -p steam-run --run "steam-run npx cypress open"
 
 # Format all files
 [group('linter')]
