@@ -32,9 +32,6 @@ In Google Chrome / Chromium you can right-click on an element in the dev tools a
 ## NixOS
 
 ```bash
-# Open cypress in the Steam Runner
-steam-run npx cypress open
-
-# Or if steam-run is not installed
-NIXPKGS_ALLOW_UNFREE=1 nix-shell -p steam-run --run "steam-run npx cypress open"
+# Run Cypress GUI
+cypress
 ```
