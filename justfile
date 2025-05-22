@@ -18,4 +18,4 @@ cypress-open-steam:
 # Format all files
 [group('linter')]
 format args='':
-    nix-shell -p treefmt nodePackages.prettier shfmt nixfmt-rfc-style statix taplo --run "treefmt {{ args }}"
+    treefmt {{ args }}
