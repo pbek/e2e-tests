@@ -2,9 +2,9 @@ name: End2End Tests
 
 on:
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
   schedule:
     - cron: "0 * * * *"
   workflow_dispatch:
@@ -21,7 +21,7 @@ jobs:
   ui-test:
     runs-on: ubuntu-latest
     # For docker images see:
-    # https://github.com/cypress-io/cypress-docker-images/tree/master/browsers#cypressbrowsers
+    # https://github.com/cypress-io/cypress-docker-images/tree/main/browsers#cypressbrowsers
     container: cypress/browsers:node16.16.0-chrome107-ff107
     strategy:
       fail-fast: false
